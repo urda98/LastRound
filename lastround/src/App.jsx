@@ -19,6 +19,7 @@ function App() {
   
     const addProductToCart = (product) => {
       setProduct([...productCart, product]);
+      alert("Haz agregado 1 " + product.name + " a tu carrito");
     }
   
 
