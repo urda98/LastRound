@@ -25,7 +25,7 @@ export default function Products({ addProductToCart }) {
       .finally(() => setLoading(false));
   }, []);
 
-  if (loading) return <p>Cargando personajes...</p>;
+  if (loading) return <p>Cargando productos...</p>;
 
   return (
     <div className="mt-4">

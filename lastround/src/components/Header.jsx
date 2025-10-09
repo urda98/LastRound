@@ -15,7 +15,7 @@ export default function Header()
   };
 
   return (
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar  bg="dark" variant="dark" expand="lg" className="mb-4">
       <Container>
         <Navbar.Brand as={Link} to="/">
           <img
@@ -30,10 +30,13 @@ export default function Header()
           <Nav className="ms-auto align-items-center">
             <Nav.Link as={Link} to="/">Home</Nav.Link>
             <Nav.Link as={Link} to="/products">Juegos</Nav.Link>
-            <Link to="/cart" className="text-white">
+            <Link to="/cart" className="text-white ms-2" aria-label="Carrito de compras">
               <FontAwesomeIcon icon={faShoppingCart} size="lg" />
             </Link>
-            
+          </Nav>  
+          
+          <div  className="d-flex align-items-center">
+          <Nav>
             {/* Enlaces que solo se muestran si el usuario está autenticado */}
             {isAuth && (
               <>
@@ -41,9 +44,6 @@ export default function Header()
                 <Nav.Link as={Link} to="/admin">Admin</Nav.Link>
               </>
             )}
-          </Nav>
-          
-          <Nav>
             {/* Mostrar botón de login o logout según autenticación */}
             {!isAuth ? (
               <Nav.Link as={Link} to="/login">Login</Nav.Link>
@@ -51,6 +51,7 @@ export default function Header()
               <Button variant="outline-light" onClick={logOut}>Cerrar sesión</Button>
             )}
           </Nav>
+          </div>
         </Navbar.Collapse>
       </Container>
     </Navbar>
