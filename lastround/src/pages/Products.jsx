@@ -2,7 +2,7 @@ import { Row } from "react-bootstrap";
 import Games from '../components/Games';
 import { useEffect, useState } from "react";
 
-export default function Products({ addProductToCart }) {
+export default function Products() {
   // Simulamos productos de ejemplo
 /*   const products = [
     { id: 1, name: "Producto 1", img: "https://placehold.co/300x200", price: "$100", stock: 5 },
@@ -32,7 +32,7 @@ export default function Products({ addProductToCart }) {
       <h2 className="mb-4">Sección de Productos</h2>
       <Row>
         {products.map((prod) => (
-          <Games key={prod.id} product={prod} addProductToCart={addProductToCart}/>
+          <Games key={prod.id} product={prod}/>
         ))}
       </Row>
     </div>

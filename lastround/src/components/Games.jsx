@@ -1,6 +1,10 @@
+import { useContext } from "react";
 import { Card, Button, Row, Col } from "react-bootstrap";
+import { CartContext } from "../context/CartContext";
 
-export default function Games ({ product, addProductToCart }) {
+export default function Games ({ product }) {
+
+  const { addProductToCart } = useContext(CartContext);
 
     return (
         <Col md={3}>

@@ -13,14 +13,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 
 
 function App() {
-  
-    const [productCart, setProduct] = useState([]);
-  
-    const addProductToCart = (product) => {
-      setProduct([...productCart, product]);
-      alert("Haz agregado 1 " + product.name + " a tu carrito");
-    }
-  
+
 
   return (
     <BrowserRouter>
@@ -28,8 +21,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/products" element={<Products addProductToCart={addProductToCart} />} />
-          <Route path="/cart" element={<Cart productCart={productCart} />} />
+          <Route path="/products" element={<Products />} />
+          <Route path="/cart" element={<Cart />} />
           <Route path="/profile/:id" element={
             <ProtectedRoute><Profile /></ProtectedRoute>
           } />
